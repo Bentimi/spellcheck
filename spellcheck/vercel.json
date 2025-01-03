@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "spellcheck/wsgi.py",
+        "use": "@vercel/ython",
+        "config": { "maxLambdaSize": "15mb" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "spellcheck/wsgi.py"
+        }
+    ]
+}
